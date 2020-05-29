@@ -22,6 +22,7 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "\(SortOrder.ascending.rawValue) order"
+        setupTable()
         registerCells()
     }
     
