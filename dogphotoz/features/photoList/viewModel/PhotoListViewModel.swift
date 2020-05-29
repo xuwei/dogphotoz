@@ -12,9 +12,11 @@ import PromiseKit
 class PhotoListViewModel {
     
     let screenName = ScreenName.photoList.rawValue
-    
     var photos: [PhotoTableCellViewModel] = []
     
+    /**
+     performs API request to retrieve photos
+     */
     func fetchPhotos(_ limit: Int)->Promise<Void> {
         return Promise<Void>() { resolver in
             DogAPI.shared.photoList(limit).done { [weak self] result in
@@ -24,7 +26,6 @@ class PhotoListViewModel {
                     let vm = PhotoTableCellViewModel(by: photo)
                     self.photos.append(vm)
                 }
-                
                 resolver.fulfill(())
             }.catch { err in
                 LoggingUtil.shared.cPrint(err)
@@ -33,6 +34,9 @@ class PhotoListViewModel {
         }
     }
     
+    /**
+     if we sort by descending order, maxSpan is used, if sort by ascending order, minSpan is used
+     */
     func lifeSpanSortIn(_ order: SortOrder, completionHandler: ()->Void) {
         switch order {
         case .ascending:

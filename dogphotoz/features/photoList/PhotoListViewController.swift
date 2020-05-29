@@ -15,7 +15,8 @@ class PhotoListViewController: UIViewController {
     @IBOutlet weak var sortButton: UIBarButtonItem!
     var viewModel = PhotoListViewModel()
     
-    /// cells to register for use
+    /// cell identifiers to register for use
+    /// if we want to register more cells to re-use, add to this array
     let identifiers = [PhotoTableCellViewModel.identifier()]
     
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData()
+        loadData() { }
     }
     
     func setupTable() {
@@ -40,6 +41,7 @@ class PhotoListViewController: UIViewController {
         /// delegate is set programmatically, less maintenance on storyboard
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
     }
     
     func registerCells() {
@@ -50,15 +52,18 @@ class PhotoListViewController: UIViewController {
         }
     }
     
-    func loadData() {
+    func loadData(_ completionHandler: @escaping ()->Void?) {
         viewModel.fetchPhotos(AppData.shared.limit).done { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadData()
+            completionHandler()
         }.catch { err in
             self.showError(err)
         }
     }
     
+    /// sort method called when user clicks on sort button, sort functionality alternates between
+    /// Ascending/Descending
     @IBAction func sort() {
         guard let sortOrder = SortOrder.init(rawValue: sortButton.title ?? "") else { return }
         viewModel.lifeSpanSortIn(sortOrder) {
@@ -67,7 +72,6 @@ class PhotoListViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
 }
 
 extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {

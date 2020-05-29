@@ -11,6 +11,7 @@ target 'dogphotoz' do
   pod 'SDWebImage', '~> 5.0'
   pod 'PopupDialog'
   pod 'Hex'
+  pod "ESPullToRefresh"
   
   target 'dogphotozTests' do
     inherit! :search_paths

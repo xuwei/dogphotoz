@@ -9,6 +9,9 @@
 import UIKit
 import SDWebImage
 
+/**
+  Table cell to display dog photo
+ */
 class PhotoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var min: UILabel!
@@ -16,12 +19,16 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var displayName: UILabel!
     @IBOutlet weak var lifeSpan: UILabel!
+    
+    /// data update happens whenever we set a new viewModel
     var viewModel: PhotoTableCellViewModel? {
         didSet {
             guard let vm = viewModel else { return }
             photo.sd_setImage(with: vm.imageUrl, placeholderImage: AppData.shared.placeholder)
             displayName.text = vm.display
             lifeSpan.text = vm.lifeSpan
+            
+            /// if lifeSpan is not available, we'll just hide min/max labels 
             if (vm.lifeSpan != AppData.shared.NA) {
                 max.isHidden = false; min.isHidden = false
                 min.text = String(vm.minSpan)

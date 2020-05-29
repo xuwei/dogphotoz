@@ -21,6 +21,9 @@ class PhotoTableCellViewModel {
     var display: String = ""
     var imageUrl: URL? = nil
     
+    /**
+     custom init to setup **PhotoTableCellViewModel** by **DogPhoto**
+     */
     init(by photo: DogPhoto) {
         
         // there are cases there breeds array is empty from retrieve data

@@ -68,6 +68,11 @@ class TestDataUtil {
         return info
     }
     
+    func testBreedInfoWithSingleValueLifespan(lifeSpan: Int)-> BreedInfo {
+        let info = BreedInfo(weight: testMetric(), height: testMetric(), id: randomId(), name: randomString(4), bredFor: randomString(4), breedGroup: randomString(4), lifeSpan: lifeSpan != -1 ? "\(lifeSpan) years" : AppData.shared.NA, temperment: randomString(4))
+        return info
+    }
+    
     func testMetric()->Metric {
         return Metric(imperial: testMetricValue(), metric: testMetricValue())
     }

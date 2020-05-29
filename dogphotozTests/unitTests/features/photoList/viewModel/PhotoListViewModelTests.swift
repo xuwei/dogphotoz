@@ -100,4 +100,12 @@ class PhotoListViewModelTests: XCTestCase {
         }
         wait(for: [expectation], timeout: XCTestConfig.shared.expectionTimeout)
     }
+    
+    func testPhotoList() {
+        let testVm = TestDataUtil.shared.testPhotoListViewModel()
+        XCTAssertNotNil(testVm)
+        XCTAssertTrue(testVm.photoList().count == 10)
+        testVm.photos = []
+        XCTAssertTrue(testVm.photoList().count == 0)
+    }
 }
