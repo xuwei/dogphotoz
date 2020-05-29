@@ -13,7 +13,7 @@ class PhotoListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
-    let limit = 50
+    let limit = 3
     var viewModel = PhotoListViewModel()
     
     /// cells to register for use
@@ -57,7 +57,15 @@ class PhotoListViewController: UIViewController {
             guard let self = self else { return }
             self.tableView.reloadData()
         }.catch { err in
-            LoggingUtil.shared.cPrint(err)
+            self.showError(err)
+        }
+    }
+    
+    @IBAction func sort() {
+        guard let sortOrder = SortOrder.init(rawValue: sortButton.title ?? "") else { return }
+        viewModel.lifeSpanSortIn(sortOrder) {
+            self.sortButton.title = sortOrder.reverse().rawValue
+            self.tableView.reloadData()
         }
     }
 

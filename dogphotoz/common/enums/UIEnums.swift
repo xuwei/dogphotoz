@@ -28,3 +28,23 @@ enum Identifier: String {
 enum ImageNames: String {
     case placeholder = "placeholder"
 }
+
+
+/**
+    Sort order
+ */
+enum SortOrder: String {
+    case ascending = "asc"
+    case descending = "desc"
+    
+    func reverse()->SortOrder {
+        return (self == .ascending) ? .descending : .ascending
+    }
+}
+
+/**
+   Popup titles
+ */
+enum PopupTitle: String {
+    case error = "Error"
+}

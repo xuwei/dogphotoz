@@ -11,7 +11,7 @@
         <!--DogPhotoz-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="PhotoListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PhotoListViewController" customModule="dogphotoz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="PhotoListViewController" customModule="dogphotoz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="DogPhotoz" id="xz0-4D-4Yo">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" id="iah-8f-6Yl"/>
+                        <barButtonItem key="rightBarButtonItem" title="desc" id="iah-8f-6Yl">
+                            <connections>
+                                <action selector="sort" destination="BYZ-38-t0r" id="cbf-dx-xn5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="sortButton" destination="iah-8f-6Yl" id="D3b-SK-3k4"/>

@@ -20,6 +20,9 @@ class PhotoTableViewCell: UITableViewCell {
             photo.sd_setImage(with: vm.imageUrl, placeholderImage: AppData.shared.placeholder)
             displayName.text = vm.display
             lifeSpan.text = vm.lifeSpan
+            
+            // random filler bg color on imageview
+            self.photo.backgroundColor = AppData.shared.colors.randomElement()
         }
     }
 

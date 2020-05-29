@@ -31,6 +31,7 @@
 		9617DD7C2480F920007A1F68 /* PhotoTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD7B2480F920007A1F68 /* PhotoTableCellViewModel.swift */; };
 		9617DD8024810B67007A1F68 /* CellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */; };
 		9617DD8324811336007A1F68 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8224811336007A1F68 /* AppData.swift */; };
+		9617DD8524813A84007A1F68 /* ViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8424813A84007A1F68 /* ViewController_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		9617DD7B2480F920007A1F68 /* PhotoTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableCellViewModel.swift; sourceTree = "<group>"; };
 		9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModelProtocol.swift; sourceTree = "<group>"; };
 		9617DD8224811336007A1F68 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		9617DD8424813A84007A1F68 /* ViewController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Extension.swift; sourceTree = "<group>"; };
 		C45696D51F54EAFC02B60FD4 /* Pods_dogphotoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogphotoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380D925931D3523C3CC311C /* Pods-dogphotoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogphotoz.debug.xcconfig"; path = "Target Support Files/Pods-dogphotoz/Pods-dogphotoz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +260,7 @@
 		9617DD512480A511007A1F68 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9617DD8424813A84007A1F68 /* ViewController_Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				9617DD5C2480AFBD007A1F68 /* DogPhoto.swift in Sources */,
 				9617DD5E2480B030007A1F68 /* BreedInfo.swift in Sources */,
 				9617DD8324811336007A1F68 /* AppData.swift in Sources */,
+				9617DD8524813A84007A1F68 /* ViewController_Extension.swift in Sources */,
 				9617DD292480A414007A1F68 /* PhotoListViewController.swift in Sources */,
 				9617DD562480AC39007A1F68 /* UIEnums.swift in Sources */,
 				9617DD762480B8CA007A1F68 /* LoggingUtil.swift in Sources */,
