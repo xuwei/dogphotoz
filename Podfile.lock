@@ -1,0 +1,46 @@
+PODS:
+  - DynamicBlurView (4.0.0)
+  - Hex (6.1.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - PromiseKit (6.12.0):
+    - PromiseKit/CorePromise (= 6.12.0)
+    - PromiseKit/Foundation (= 6.12.0)
+    - PromiseKit/UIKit (= 6.12.0)
+  - PromiseKit/CorePromise (6.12.0)
+  - PromiseKit/Foundation (6.12.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.12.0):
+    - PromiseKit/CorePromise
+  - SDWebImage (5.4.0):
+    - SDWebImage/Core (= 5.4.0)
+  - SDWebImage/Core (5.4.0)
+  - SnapshotTest (3.0.0)
+
+DEPENDENCIES:
+  - Hex
+  - PopupDialog
+  - PromiseKit
+  - SDWebImage (~> 5.0)
+  - SnapshotTest
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - DynamicBlurView
+    - Hex
+    - PopupDialog
+    - PromiseKit
+    - SDWebImage
+    - SnapshotTest
+
+SPEC CHECKSUMS:
+  DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
+  Hex: 2f67dd0cbb178cb24992e7529b025b8d16ff0bdc
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
+  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SnapshotTest: 8d5c6a5778d5a7ae6e9cec9eae087696ebbd3ab1
+
+PODFILE CHECKSUM: 9fef165efd077857d0854f0c961b14c8fce39c6b
+
+COCOAPODS: 1.7.4
