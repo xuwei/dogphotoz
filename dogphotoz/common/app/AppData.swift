@@ -8,6 +8,9 @@
 import UIKit
 import Hex
 
+/**
+ To keep track of app configurations 
+ */
 class AppData {
     
     /// Singleton instance

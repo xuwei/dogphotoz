@@ -9,6 +9,8 @@
 import UIKit
 
 extension UIViewController {
+    
+    /// error popup handler across all UIViewController
     func showError(_ err: Error) {
         let alert = UIAlertController(title: PopupTitle.error.rawValue, message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))

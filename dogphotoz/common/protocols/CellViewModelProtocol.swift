@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ To keep tableviewcell viewModels consistent, so table can use this interface to register cells
+ */
 protocol CellViewModelProtocol {
     static func identifier()-> String
 }
