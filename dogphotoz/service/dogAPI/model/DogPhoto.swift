@@ -12,6 +12,8 @@ struct DogPhoto: Codable {
     let id: String?
     let url: String?
     let width: Int?
-    let height: Int?
+    let height: Int
     let breeds: [BreedInfo]
 }
+
+    

@@ -14,3 +14,17 @@ import UIKit
 enum ScreenName: String {
     case photoList = "Photo List"
 }
+
+/**
+    TableViewCell identifiers
+ */
+enum Identifier: String {
+    case photoTableViewCell = "PhotoTableViewCell"
+}
+
+/**
+    Image names
+*/
+enum ImageNames: String {
+    case placeholder = "placeholder"
+}

@@ -26,6 +26,11 @@
 		9617DD6E2480B641007A1F68 /* DogAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD6D2480B641007A1F68 /* DogAPITests.swift */; };
 		9617DD732480B686007A1F68 /* PhotoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD722480B686007A1F68 /* PhotoListViewModelTests.swift */; };
 		9617DD762480B8CA007A1F68 /* LoggingUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD752480B8CA007A1F68 /* LoggingUtil.swift */; };
+		9617DD792480F8F5007A1F68 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD772480F8F5007A1F68 /* PhotoTableViewCell.swift */; };
+		9617DD7A2480F8F5007A1F68 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9617DD782480F8F5007A1F68 /* PhotoTableViewCell.xib */; };
+		9617DD7C2480F920007A1F68 /* PhotoTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD7B2480F920007A1F68 /* PhotoTableCellViewModel.swift */; };
+		9617DD8024810B67007A1F68 /* CellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */; };
+		9617DD8324811336007A1F68 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8224811336007A1F68 /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 		9617DD6D2480B641007A1F68 /* DogAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPITests.swift; sourceTree = "<group>"; };
 		9617DD722480B686007A1F68 /* PhotoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModelTests.swift; sourceTree = "<group>"; };
 		9617DD752480B8CA007A1F68 /* LoggingUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingUtil.swift; sourceTree = "<group>"; };
+		9617DD772480F8F5007A1F68 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		9617DD782480F8F5007A1F68 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		9617DD7B2480F920007A1F68 /* PhotoTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableCellViewModel.swift; sourceTree = "<group>"; };
+		9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModelProtocol.swift; sourceTree = "<group>"; };
+		9617DD8224811336007A1F68 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		C45696D51F54EAFC02B60FD4 /* Pods_dogphotoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogphotoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380D925931D3523C3CC311C /* Pods-dogphotoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogphotoz.debug.xcconfig"; path = "Target Support Files/Pods-dogphotoz/Pods-dogphotoz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				9617DD4C2480A4C9007A1F68 /* viewModel */,
+				9617DD772480F8F5007A1F68 /* PhotoTableViewCell.swift */,
+				9617DD782480F8F5007A1F68 /* PhotoTableViewCell.xib */,
 			);
 			path = tableViewCell;
 			sourceTree = "<group>";
@@ -203,6 +215,7 @@
 		9617DD4C2480A4C9007A1F68 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9617DD7B2480F920007A1F68 /* PhotoTableCellViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -237,6 +250,7 @@
 		9617DD502480A50A007A1F68 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				9617DD8224811336007A1F68 /* AppData.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 		9617DD522480A522007A1F68 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -431,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9617DD7A2480F8F5007A1F68 /* PhotoTableViewCell.xib in Resources */,
 				9617DD312480A415007A1F68 /* LaunchScreen.storyboard in Resources */,
 				9617DD2E2480A415007A1F68 /* Assets.xcassets in Resources */,
 				9617DD2C2480A414007A1F68 /* Main.storyboard in Resources */,
@@ -532,17 +548,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9617DD792480F8F5007A1F68 /* PhotoTableViewCell.swift in Sources */,
 				9617DD5C2480AFBD007A1F68 /* DogPhoto.swift in Sources */,
 				9617DD5E2480B030007A1F68 /* BreedInfo.swift in Sources */,
+				9617DD8324811336007A1F68 /* AppData.swift in Sources */,
 				9617DD292480A414007A1F68 /* PhotoListViewController.swift in Sources */,
 				9617DD562480AC39007A1F68 /* UIEnums.swift in Sources */,
 				9617DD762480B8CA007A1F68 /* LoggingUtil.swift in Sources */,
+				9617DD8024810B67007A1F68 /* CellViewModelProtocol.swift in Sources */,
 				9617DD602480B100007A1F68 /* Metric.swift in Sources */,
 				9617DD542480ABDD007A1F68 /* PhotoListViewModel.swift in Sources */,
 				9617DD252480A414007A1F68 /* AppDelegate.swift in Sources */,
 				9617DD272480A414007A1F68 /* SceneDelegate.swift in Sources */,
 				9617DD582480ACB7007A1F68 /* DogAPI.swift in Sources */,
 				9617DD652480B2B2007A1F68 /* ServiceEnums.swift in Sources */,
+				9617DD7C2480F920007A1F68 /* PhotoTableCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
