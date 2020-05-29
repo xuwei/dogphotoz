@@ -13,7 +13,7 @@ struct DogPhoto: Codable {
     let url: String?
     let width: Int?
     let height: Int
-    let breeds: [BreedInfo]
+    var breeds: [BreedInfo]
 }
 
     

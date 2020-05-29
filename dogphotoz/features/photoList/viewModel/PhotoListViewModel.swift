@@ -13,7 +13,7 @@ class PhotoListViewModel {
     
     let screenName = ScreenName.photoList.rawValue
     
-    private var photos: [PhotoTableCellViewModel] = []
+    var photos: [PhotoTableCellViewModel] = []
     
     func fetchPhotos(_ limit: Int)->Promise<Void> {
         return Promise<Void>() { resolver in
@@ -21,8 +21,7 @@ class PhotoListViewModel {
                 guard let self = self else { return }
                 self.photos = []
                 for photo in result {
-                    let vm = PhotoTableCellViewModel()
-                    vm.update(by: photo)
+                    let vm = PhotoTableCellViewModel(by: photo)
                     self.photos.append(vm)
                 }
                 

@@ -13,6 +13,9 @@ class AppData {
     /// Singleton instance
     static let shared = AppData()
     
+    /// N/A string
+    let NA = "N/A"
+    
     /// image place holder
     let placeholder = UIImage.init(named: ImageNames.placeholder.rawValue)
     

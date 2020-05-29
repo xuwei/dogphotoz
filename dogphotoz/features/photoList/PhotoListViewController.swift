@@ -17,7 +17,7 @@ class PhotoListViewController: UIViewController {
     var viewModel = PhotoListViewModel()
     
     /// cells to register for use
-    let cellViewModels = [PhotoTableCellViewModel()]
+    let identifiers = [PhotoTableCellViewModel.identifier()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +45,7 @@ class PhotoListViewController: UIViewController {
     
     func registerCells() {
         guard self.tableView != nil else { return }
-        for vm: CellViewModelProtocol in cellViewModels {
-            let cellIdentifier = vm.identifier()
+        for cellIdentifier in identifiers {
             let nib = UINib(nibName: cellIdentifier, bundle: nil)
             self.tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         }
@@ -77,7 +76,7 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
         let photoList = viewModel.photoList()
         guard photoList.count > indexPath.row else { return UITableViewCell() }
         let cellViewModel: PhotoTableCellViewModel = photoList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellViewModel.identifier(), for: indexPath) as! PhotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableCellViewModel.identifier(), for: indexPath) as! PhotoTableViewCell
         cell.viewModel = cellViewModel
         return cell
     }

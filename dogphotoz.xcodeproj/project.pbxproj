@@ -32,6 +32,7 @@
 		9617DD8024810B67007A1F68 /* CellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */; };
 		9617DD8324811336007A1F68 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8224811336007A1F68 /* AppData.swift */; };
 		9617DD8524813A84007A1F68 /* ViewController_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8424813A84007A1F68 /* ViewController_Extension.swift */; };
+		9617DD8724814766007A1F68 /* TestDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9617DD8624814766007A1F68 /* TestDataUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		9617DD7F24810B67007A1F68 /* CellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModelProtocol.swift; sourceTree = "<group>"; };
 		9617DD8224811336007A1F68 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		9617DD8424813A84007A1F68 /* ViewController_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Extension.swift; sourceTree = "<group>"; };
+		9617DD8624814766007A1F68 /* TestDataUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataUtil.swift; sourceTree = "<group>"; };
 		C45696D51F54EAFC02B60FD4 /* Pods_dogphotoz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogphotoz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D380D925931D3523C3CC311C /* Pods-dogphotoz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogphotoz.debug.xcconfig"; path = "Target Support Files/Pods-dogphotoz/Pods-dogphotoz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				9617DD682480B5F8007A1F68 /* integrationTests */,
 				9617DD3D2480A415007A1F68 /* Info.plist */,
 				9617DD662480B5B3007A1F68 /* XCTestConfig.swift */,
+				9617DD8624814766007A1F68 /* TestDataUtil.swift */,
 			);
 			path = dogphotozTests;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9617DD672480B5B3007A1F68 /* XCTestConfig.swift in Sources */,
+				9617DD8724814766007A1F68 /* TestDataUtil.swift in Sources */,
 				9617DD732480B686007A1F68 /* PhotoListViewModelTests.swift in Sources */,
 				9617DD6E2480B641007A1F68 /* DogAPITests.swift in Sources */,
 			);

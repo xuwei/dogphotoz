@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CellViewModelProtocol {
-    func identifier()-> String
+    static func identifier()-> String
 }

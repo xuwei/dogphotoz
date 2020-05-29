@@ -15,18 +15,17 @@ class PhotoTableCellViewModel {
     var lifeSpan: String = ""
     var display: String = ""
     var imageUrl: URL? = nil
-    let lifeSpanNA = "N/A"
     
-    func update(by photo: DogPhoto) {
+    init(by photo: DogPhoto) {
         
         // there are cases there breeds array is empty from retrieve data
         if !photo.breeds.isEmpty {
             let info = photo.breeds[0]
             display = info.name ?? ""
-            lifeSpan = info.lifeSpan ?? lifeSpanNA
+            lifeSpan = info.lifeSpan ?? AppData.shared.NA
         } else {
             display = photo.id ?? ""
-            lifeSpan = lifeSpanNA
+            lifeSpan = AppData.shared.NA
         }
         
         imageUrl =  URL(string: photo.url ?? "")
@@ -39,8 +38,7 @@ class PhotoTableCellViewModel {
     func extractLifeSpan(_ lifeSpan: String) {
         /// if lifeSpan is NA, then set minSpan very high, and maxSpan very low, so we make sure
         /// these data don't show at the top in either sorting order
-        if lifeSpan == lifeSpanNA { minSpan = Int.max; maxSpan = Int.min; return }
-        
+        if lifeSpan == AppData.shared.NA { minSpan = Int.max; maxSpan = Int.min; return }
         
         let components = lifeSpan.replacingOccurrences(of: "years", with: "").components(separatedBy: "-")
         guard components.count > 0 else { return }
@@ -48,8 +46,6 @@ class PhotoTableCellViewModel {
         maxSpan = minSpan
         guard components.count > 1 else { return }
         maxSpan = extractInt(components.last ?? "") ?? Int.max
-        LoggingUtil.shared.cPrint("minSpan \(minSpan)")
-        LoggingUtil.shared.cPrint("maxSpan \(maxSpan)")
     }
     
     private func extractInt(_ text: String)->Int? {
@@ -59,7 +55,7 @@ class PhotoTableCellViewModel {
 
 extension PhotoTableCellViewModel: CellViewModelProtocol {
     
-    func identifier() -> String {
+    static func identifier() -> String {
         return Identifier.photoTableViewCell.rawValue
     }
 }
