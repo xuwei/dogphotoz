@@ -28,7 +28,7 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData() { }
+        loadData()
     }
     
     func setupTable() {
@@ -53,11 +53,10 @@ class PhotoListViewController: UIViewController {
         }
     }
     
-    func loadData(_ completionHandler: @escaping ()->Void?) {
+    func loadData() {
         viewModel.fetchPhotos(AppData.shared.limit).done { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadData()
-            completionHandler()
         }.catch { err in
             self.showError(err)
         }
