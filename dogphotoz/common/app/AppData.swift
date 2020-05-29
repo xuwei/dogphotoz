@@ -16,6 +16,9 @@ class AppData {
     /// N/A string
     let NA = "N/A"
     
+    /// photo list limit 
+    let limit = 50
+    
     /// image place holder
     let placeholder = UIImage.init(named: ImageNames.placeholder.rawValue)
     

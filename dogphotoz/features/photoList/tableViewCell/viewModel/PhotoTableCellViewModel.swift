@@ -8,6 +8,11 @@
 
 import Foundation
 
+/**
+ ViewModel for **PhotoTableViewCell**, minSpan and maxSpan is used for sorting
+ When sorting by ascending order, minSpan is used to have minimum life span in ascending order
+ When sorting by descending order, maxSpan is used to have maximum life span in descending order
+ */
 class PhotoTableCellViewModel {
 
     var minSpan: Int = 0

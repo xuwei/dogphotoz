@@ -13,7 +13,6 @@ class PhotoListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
-    let limit = 3
     var viewModel = PhotoListViewModel()
     
     /// cells to register for use
@@ -21,7 +20,7 @@ class PhotoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = viewModel.screenName
+        self.title = "\(SortOrder.ascending.rawValue) order"
         registerCells()
     }
     
@@ -52,7 +51,7 @@ class PhotoListViewController: UIViewController {
     }
     
     func loadData() {
-        viewModel.fetchPhotos(limit).done { [weak self] _ in
+        viewModel.fetchPhotos(AppData.shared.limit).done { [weak self] _ in
             guard let self = self else { return }
             self.tableView.reloadData()
         }.catch { err in
@@ -63,6 +62,7 @@ class PhotoListViewController: UIViewController {
     @IBAction func sort() {
         guard let sortOrder = SortOrder.init(rawValue: sortButton.title ?? "") else { return }
         viewModel.lifeSpanSortIn(sortOrder) {
+            self.title = "\(sortOrder.rawValue) order"
             self.sortButton.title = sortOrder.reverse().rawValue
             self.tableView.reloadData()
         }
