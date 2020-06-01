@@ -59,6 +59,24 @@ class PhotoTableCellViewModel {
     private func extractInt(_ text: String)->Int? {
         return Int(text.trimmingCharacters(in: .whitespacesAndNewlines))
     }
+    
+    func updateCell(_ photoTableViewCell: inout PhotoTableViewCell) {
+        
+        photoTableViewCell.photo.sd_setImage(with: imageUrl, placeholderImage: AppData.shared.placeholder)
+        photoTableViewCell.displayName.text = display
+        photoTableViewCell.lifeSpan.text = lifeSpan
+        
+        /// if lifeSpan is not available, we'll just hide min/max labels
+        if (lifeSpan != AppData.shared.NA) {
+            photoTableViewCell.max.isHidden = false; photoTableViewCell.min.isHidden = false
+            photoTableViewCell.min.text = String(minSpan)
+            photoTableViewCell.max.text = String(maxSpan)
+        } else {
+            photoTableViewCell.max.isHidden = true; photoTableViewCell.min.isHidden = true
+        }
+        // random filler bg color on imageview
+        photoTableViewCell.photo.backgroundColor = AppData.shared.colors.randomElement()
+    }
 }
 
 extension PhotoTableCellViewModel: CellViewModelProtocol {

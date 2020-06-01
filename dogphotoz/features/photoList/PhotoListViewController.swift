@@ -80,8 +80,10 @@ extension PhotoListViewController: UITableViewDelegate, UITableViewDataSource {
         let photoList = viewModel.photoList()
         guard photoList.count > indexPath.row else { return UITableViewCell() }
         let cellViewModel: PhotoTableCellViewModel = photoList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableCellViewModel.identifier(), for: indexPath) as! PhotoTableViewCell
-        cell.viewModel = cellViewModel
+        var cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableCellViewModel.identifier(), for: indexPath) as! PhotoTableViewCell
+        
+        // viewModel update cell by reference 
+        cellViewModel.updateCell(&cell)
         return cell
     }
     
